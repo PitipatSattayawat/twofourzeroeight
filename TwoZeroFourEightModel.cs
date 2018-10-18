@@ -35,10 +35,76 @@ namespace twozerofoureight
             HandleChanges();
         }
 
-        public int[,] GetBoard()
+        public int [,]GetBoard()
         {
             return board;
         }
+        public int getscore()
+        {
+            int result = 0;
+            foreach (int i in range)
+            {
+                foreach (int j in range)
+                {
+                    result += board[i, j];
+                }
+            }
+            return result;
+        }
+        
+        public bool เช็คแปป()
+        {
+            bool checker = false;
+            foreach (int i in range)
+            {
+                foreach (int j in range)
+                {
+                    if (board[i,j]==2048 ) {
+                        checker = true; }
+                    
+                    
+                }
+            }
+            return checker;
+        }
+        public bool เช็คแปป2()
+        {
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    if (board[i, j] == 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    if (j + 1 < boardSize && board[i, j + 1] == board[i, j])
+                    {
+                        return false;
+                    }
+                    if (i + 1 < boardSize && board[i + 1, j] == board[i, j])
+                    {
+                        return false;
+                    }
+                    if (j - 1 >= 0 && board[i, j - 1] == board[i, j])
+                    {
+                        return false;
+                    }
+                    if (i - 1 >= 0 && board[i - 1, j] == board[i, j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
 
         private void AddRandomSlot()
         {
@@ -192,5 +258,6 @@ namespace twozerofoureight
             }
             HandleChanges(changed);
         }
+       
     }
 }

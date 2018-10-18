@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl00 = new System.Windows.Forms.Label();
             this.lbl01 = new System.Windows.Forms.Label();
             this.lbl02 = new System.Windows.Forms.Label();
@@ -44,6 +45,9 @@
             this.lbl32 = new System.Windows.Forms.Label();
             this.lbl31 = new System.Windows.Forms.Label();
             this.lbl30 = new System.Windows.Forms.Label();
+            this.scoredy = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.eieihaha = new System.Windows.Forms.Label();
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
@@ -258,6 +262,34 @@
             this.lbl30.Text = "0";
             this.lbl30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // scoredy
+            // 
+            this.scoredy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.scoredy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scoredy.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.scoredy.ForeColor = System.Drawing.Color.Silver;
+            this.scoredy.Location = new System.Drawing.Point(337, 229);
+            this.scoredy.Margin = new System.Windows.Forms.Padding(0);
+            this.scoredy.Name = "scoredy";
+            this.scoredy.Size = new System.Drawing.Size(439, 174);
+            this.scoredy.TabIndex = 20;
+            this.scoredy.Text = "Score: ";
+            this.scoredy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.scoredy.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // eieihaha
+            // 
+            this.eieihaha.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.eieihaha.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.eieihaha.ForeColor = System.Drawing.Color.Red;
+            this.eieihaha.Location = new System.Drawing.Point(337, 0);
+            this.eieihaha.Margin = new System.Windows.Forms.Padding(0);
+            this.eieihaha.Name = "eieihaha";
+            this.eieihaha.Size = new System.Drawing.Size(439, 214);
+            this.eieihaha.TabIndex = 21;
+            this.eieihaha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.eieihaha.Click += new System.EventHandler(this.statusy);
+            // 
             // btnLeft
             // 
             this.btnLeft.Location = new System.Drawing.Point(85, 336);
@@ -267,6 +299,8 @@
             this.btnLeft.Text = "←";
             this.btnLeft.UseVisualStyleBackColor = true;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            this.btnLeft.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnUp_KeyDown);
+            this.btnLeft.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnUp_PreviewKeyDown);
             // 
             // btnUp
             // 
@@ -277,16 +311,20 @@
             this.btnUp.Text = "↑";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            this.btnUp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnUp_KeyDown);
+            this.btnUp.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnUp_PreviewKeyDown);
             // 
             // btnRight
             // 
-            this.btnRight.Location = new System.Drawing.Point(195, 336);
+            this.btnRight.Location = new System.Drawing.Point(199, 336);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(53, 45);
             this.btnRight.TabIndex = 18;
             this.btnRight.Text = "→";
             this.btnRight.UseVisualStyleBackColor = true;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            this.btnRight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnUp_KeyDown);
+            this.btnRight.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnUp_PreviewKeyDown);
             // 
             // btnDown
             // 
@@ -297,12 +335,16 @@
             this.btnDown.Text = "↓";
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.btnDown.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnUp_KeyDown);
+            this.btnDown.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.btnUp_PreviewKeyDown);
             // 
             // TwoZeroFourEightView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 428);
+            this.ClientSize = new System.Drawing.Size(816, 428);
+            this.Controls.Add(this.eieihaha);
+            this.Controls.Add(this.scoredy);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnUp);
@@ -323,6 +365,7 @@
             this.Controls.Add(this.lbl02);
             this.Controls.Add(this.lbl01);
             this.Controls.Add(this.lbl00);
+            this.KeyPreview = true;
             this.Name = "TwoZeroFourEightView";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -347,6 +390,9 @@
         private System.Windows.Forms.Label lbl32;
         private System.Windows.Forms.Label lbl31;
         private System.Windows.Forms.Label lbl30;
+        private System.Windows.Forms.Label scoredy;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label eieihaha;
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnRight;
