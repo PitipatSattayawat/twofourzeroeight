@@ -39,27 +39,27 @@ namespace twozerofoureight
         {
             return board;
         }
-        public int getscore()
+        public int getscore() //+ all tile to be score
         {
             int result = 0;
             foreach (int i in range)
             {
                 foreach (int j in range)
                 {
-                    result += board[i, j];
+                    result += board[i, j]; //+ every tile
                 }
             }
             return result;
         }
         
-        public bool เช็คแปป()
+        public bool เช็คแปป() //check if it reach 2048 
         {
             bool checker = false;
             foreach (int i in range)
             {
                 foreach (int j in range)
                 {
-                    if (board[i,j]==2048 ) {
+                    if (board[i,j]==2048 ) { 
                         checker = true; }
                     
                     
@@ -67,7 +67,7 @@ namespace twozerofoureight
             }
             return checker;
         }
-        public bool เช็คแปป2()
+        public bool เช็คแปป2() //for check unmoveable tile
         {
             for (int i = 0; i < boardSize; i++)
             {
@@ -106,7 +106,7 @@ namespace twozerofoureight
         }
 
 
-        private void AddRandomSlot()
+        private void AddRandomSlot() //generate by random position and put 2 that
         {
             while (true)
             {

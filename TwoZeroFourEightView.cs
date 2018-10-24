@@ -28,7 +28,7 @@ namespace twozerofoureight
         public void Notify(Model m)
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
-            updatescore(((TwoZeroFourEightModel)m).getscore());
+            updatescore(((TwoZeroFourEightModel)m).getscore());   
             updatestatus(((TwoZeroFourEightModel)m).เช็คแปป());
             updatestatus(((TwoZeroFourEightModel)m).เช็คแปป2());
         }
@@ -37,7 +37,7 @@ namespace twozerofoureight
             if (เช็คแปป == true)
             {
                 KeyPreview = false;
-                eieihaha.Text = "ตายละรู้ยัง?";
+                eieihaha.Text = "จบละรู้ยัง?";
             }
         }
         private void UpdateTile(Label l, int i)
@@ -124,7 +124,7 @@ namespace twozerofoureight
 
         }
 
-        private void btnUp_KeyDown(object sender, KeyEventArgs e)
+        private void btnUp_KeyDown(object sender, KeyEventArgs e) //can use arrowkays and wasd by get e.keydata
         {
             if (KeyPreview == true)
             {
@@ -151,7 +151,7 @@ namespace twozerofoureight
             }
         }
 
-        private void btnUp_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void btnUp_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e) //make every arrow key can put as input
         {
             switch (e.KeyData)
             {
